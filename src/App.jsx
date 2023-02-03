@@ -17,13 +17,13 @@ const App = () => {
   const earthRef = useRef()
   useFrame(({ camera }) => {
     earthRef.current.rotation.y += 0.0025
-    camera.position.z = 15 * Math.sin(Math.abs(earthRef.current.rotation.y))
+    camera.position.z = 20 * Math.sin(Math.abs(earthRef.current.rotation.y))
   })
 
   return (
     <>
       <group ref={groupRef}>
-        <mesh ref={earthRef} rotation={[0, 180, 0]}>
+        <mesh ref={earthRef} rotation={[0, 0, 0]}>
           <sphereGeometry />
           <shaderMaterial
             vertexShader={vertexShader}
